@@ -1,4 +1,5 @@
 node_modules/
+.angular/
 .angular
 .angular/cache
 .vscode
