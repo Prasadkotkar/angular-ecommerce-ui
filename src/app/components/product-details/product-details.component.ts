@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product: Product = new Product();
+  product!: Product;
 
   constructor(private productService: ProductService, 
             private route: ActivatedRoute) { }
@@ -31,4 +31,5 @@ export class ProductDetailsComponent implements OnInit {
         this.product = data;
       }
     )
+    }
 }

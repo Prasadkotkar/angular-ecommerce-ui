@@ -1,7 +1,7 @@
 node_modules/
 .angular
+.angular/cache
 .vscode
-.idea
 .log
 .iml
-.idea/
+
