@@ -14,7 +14,13 @@ export class ProductListComponent implements OnInit{
 
     products: Product[] = [];
     currentCategoryId: number=1;
+    previousCategoryId: number = 1;
     searchMode: boolean = false;
+
+    // new properties for pagination
+    thePageNumber: number = 1;
+    thePageSize: number = 5;
+    theTotalElements: number = 0;
 
     constructor(private productService: ProductService, 
                 private route: ActivatedRoute) {}
@@ -45,8 +51,7 @@ export class ProductListComponent implements OnInit{
     )
   }
 
-
-    handleListProducts() {
+  handleListProducts() {
       // check if "id" parameter is available
       const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
@@ -57,11 +62,39 @@ export class ProductListComponent implements OnInit{
           // not category id available ... default to category id 1
           this.currentCategoryId = 1;
       }
+      //
+      // Check if we have a different categoryId than previous
+      // Note: Angular will reuse a component if it is currently being viewed
+      //
+
+      // If we have a different category id then previous
+      // then reset the pageNumber back to 1
+      if(this.previousCategoryId != this.currentCategoryId) {
+        this.thePageNumber = 1;
+      }
+
+      this.previousCategoryId = this.currentCategoryId;
+
+      console.log(`currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
+      
       // get products for the given category id
-      this.productService.getProductList(this.currentCategoryId).subscribe(
-        data => {
-          this.products = data;
-        }
-      )
+      this.productService.getProductListPaginate(this.thePageNumber - 1,  // Spring Data Rest: pages are 0 based
+                                                 this.thePageSize,
+                                                 this.currentCategoryId)
+                                                 .subscribe(
+                                                  data => {
+                                                    this.products = data._embedded.products;
+                                                    this.thePageNumber = data.page.number + 1;  // Angular pages are  1 based
+                                                    this.thePageSize = data.page.size;
+                                                    this.theTotalElements = data.page.totalElements;
+                                                  }
+                                                 );
+                                  
+    } 
+
+    updatePageSize(pageSize: string) {
+      this.thePageSize = +pageSize;
+      this.thePageNumber = 1;
+      this.listProducts();
     }
 }

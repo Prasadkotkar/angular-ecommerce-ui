@@ -24,9 +24,21 @@ export class ProductService {
     return this.httpClient.get<Product>(productUrl);
   }
 
+  getProductListPaginate(thePage: number,
+                         thePageSize: number,
+                         theCategoryId: number): Observable<GetResponseProduct> {
+
+    // need to build URL base on category id +
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`
+                      + `&page=${thePage}&size=${thePageSize}`;
+
+
+    return this.httpClient.get<GetResponseProduct>(searchUrl);
+}
+
   getProductList(theCategoryId: number): Observable<Product[]> {
 
-      // need to build URL base on category id +
+      // need to build URL base on category id + page and size
       const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
 
 
@@ -34,6 +46,8 @@ export class ProductService {
              .pipe(map(response => response._embedded.products)
              );
   }
+
+  
 
   searchProducts(theKeyword: string) : Observable<Product[]> {
       // need to build URL base on keyword
@@ -56,6 +70,12 @@ export class ProductService {
 interface GetResponseProduct {
     _embedded: {
       products: Product[];
+    },
+    page: {
+      size: number,
+      totalElements: number,
+      totalPages: number,
+      number: number
     }
 }
 

@@ -1,7 +1,6 @@
 node_modules/
 .angular/
-.angular
-.angular/cache
+.angular/cache/
 .vscode
 .log
 .iml
