@@ -8,3 +8,19 @@ node_modules/
 
 *.json
 *.pack
+node_modules/__ngcc_entry_points__.json
+node_modules/.package-lock.json
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/0.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/1.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/2.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/3.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/4.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/5.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/6.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/8.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/9.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/11.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/12.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/13.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/index.pack
+.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/index.pack.old
