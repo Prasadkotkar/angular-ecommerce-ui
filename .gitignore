@@ -1,7 +1,10 @@
+
 node_modules/
-.angular/
+*.angular/
 .angular/cache/
 .vscode
 .log
 .iml
 
+*.json
+*.pack
