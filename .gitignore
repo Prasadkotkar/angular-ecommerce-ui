@@ -1,13 +1,13 @@
-# Ignore OS-specific files
+#OS-specific files
 .DS_Store
 Thumbs.db
 
-# Ignore Node.js dependencies and build artifacts
+#Node.js dependencies and build artifacts
 /node_modules
 /dist
 /.angular/cache
 
-# Ignore IDE and editor-specific files
+#IDE and editor-specific files
 /.idea
 /.vscode
 *.suo
@@ -16,7 +16,7 @@ Thumbs.db
 *.sln
 *.sw?
 
-# Ignore npm/yarn logs
+#npm/yarn logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
