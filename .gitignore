@@ -1,26 +1,54 @@
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
 
-node_modules/
-*.angular/
-.angular/cache/
-.vscode
-.log
-.iml
+# Ignore Node.js dependencies and build artifacts
+/node_modules
+/dist
+/.angular/cache
 
-*.json
-*.pack
-node_modules/__ngcc_entry_points__.json
-node_modules/.package-lock.json
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/0.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/1.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/2.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/3.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/4.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/5.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/6.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/8.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/9.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/11.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/12.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/13.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/index.pack
-.angular/cache/15.2.9/angular-webpack/1a829b87e995ec0e950e650755c21084c5826be3/index.pack.old
+# Ignore IDE and editor-specific files
+/.idea
+/.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#environment files
+/.env
+/.env.local
+/.env.*.local
+
+#TypeScript build output
+/*.js
+/*.map
+/*.d.ts
+
+#Jest test coverage directory
+/coverage
+
+#Angular CLI workspace configuration
+/.angular
+
+#temporary files
+/tmp
+/out-tsc
+
+#compiled output
+/dist
+/dist-server
+
+#e2e test output
+/e2e/*.js
+/e2e/*.map
+
+#package manager lock files
+# /package-lock.json
+# /yarn.lock
